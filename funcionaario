@@ -1,0 +1,84 @@
+package com.mycompany.registro;
+
+
+public class Registro {
+    public static void main(String[] args) {
+
+
+        Funcionario1 matheus = new Funcionario1("Matheus de Wit", 26, "Caixa", 1500.0);
+
+       System.out.println("Nome: " + matheus.getnome() + "\nIdade: " + matheus.getidade() + "\nCargo: "+ matheus.getcargo() + "\nSalario: " + matheus.getsalario() + "\nBonus: " + matheus.getbonus() + "\n");
+
+        matheus.setadiciona(500);
+        System.out.println("Salario atualizado!\n");
+        
+        System.out.println("Nome: " + matheus.getnome() + "\nIdade: " + matheus.getidade() + "\nCargo: "+ matheus.getcargo() + "\nSalario: " + matheus.getsalario() + "\nBonus: " + matheus.getbonus());
+
+    }
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+package com.mycompany.registro;
+
+public class Funcionario1 
+{
+    private String nome;        
+    private int idade;
+    private String cargo;
+    private double salario;
+    private double bonus = 500;
+        
+    public Funcionario1(String nome, int idade, String cargo, double salario)
+    {
+        this.nome = nome;
+        this.idade = idade;
+        this.cargo = cargo;
+        this.salario = salario;
+    }
+
+//============================================================================== 
+        
+    public String getnome()
+    {
+        return nome;
+    }
+    
+    public int getidade()
+    {
+        return idade;
+    }
+
+    public String getcargo()
+    {
+        return cargo;
+    }
+    
+    public double getsalario()
+    {
+        return salario;
+    }
+    
+    public double getbonus()
+    {
+        return bonus;
+    }
+    
+//==============================================================================    
+    
+    void setadiciona(double novoadiciona) {
+        this.bonus = novoadiciona;
+        atualizarsalario();
+    }
+    
+    private void atualizarsalario()
+    {
+        salario += bonus;
+        bonus = 0;
+    }
+
+}
+//==============================================================================
+
+
+
